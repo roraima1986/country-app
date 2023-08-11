@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutPageComponent } from './shared/pages/about-page/about-page.component';
+import { ContactPageComponent } from './shared/pages/contact-page/contact-page.component';
 import { HomePageComponent } from './shared/pages/homePage/homePage.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomePageComponent
   },
   {
@@ -13,8 +14,12 @@ const routes: Routes = [
     component: AboutPageComponent
   },
   {
+    path: 'contact',
+    component: ContactPageComponent
+  },
+  {
     path: '**',
-    redirectTo:'home',
+    redirectTo:'',
   }
 ];
 
