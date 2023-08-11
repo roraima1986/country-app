@@ -132,12 +132,12 @@ export interface PostalCode {
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-  public static toSearchResponse(json: string): SearchResponse[] {
-      return cast(JSON.parse(json), a(r("SearchResponse")));
+  public static toCountry(json: string): Country[] {
+      return cast(JSON.parse(json), a(r("Country")));
   }
 
-  public static searchResponseToJson(value: SearchResponse[]): string {
-      return JSON.stringify(uncast(value, a(r("SearchResponse"))), null, 2);
+  public static CountryToJson(value: Country[]): string {
+      return JSON.stringify(uncast(value, a(r("Country"))), null, 2);
   }
 }
 
@@ -294,7 +294,7 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-  "SearchResponse": o([
+  "Country": o([
       { json: "name", js: "name", typ: r("Name") },
       { json: "tld", js: "tld", typ: a("") },
       { json: "cca2", js: "cca2", typ: "" },
