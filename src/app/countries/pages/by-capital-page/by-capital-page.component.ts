@@ -8,7 +8,8 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByCapitalPageComponent implements OnInit {
 
-  public countries:Country[] = []
+  public countries:Country[] = [];
+  public isLoading: boolean = false;
 
   constructor(private countriesService: CountriesService) { }
 
@@ -16,9 +17,12 @@ export class ByCapitalPageComponent implements OnInit {
   }
 
   searchByCapital(term:string):void{
+
+    this.isLoading = true;
     this.countriesService.searchCapital(term)
       .subscribe(countries => {
         this.countries = countries;
+        this.isLoading = false;
       });
 
       console.log({term});
