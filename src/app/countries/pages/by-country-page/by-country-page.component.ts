@@ -8,11 +8,14 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByCountryPageComponent implements OnInit {
 
-  public countries:Country[] = []
+  public countries:Country[] = [];
+  public initialValue:string = '';
 
   constructor(private countriesService: CountriesService) { }
 
   ngOnInit() {
+    this.countries = this.countriesService.cacheStore.byCountries.countries;
+    this.initialValue = this.countriesService.cacheStore.byCountries.term;
   }
 
   searchByCountry(term:string):void{
