@@ -1,13 +1,27 @@
-<div class="row mt-4">
-
-  <div class="col-3">
-    <!--Sidebar-->
-    <shared-sidebar></shared-sidebar>
+<nav class="navbar bg-dark bg-gradient fixed-top" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="countries/by-capital">Country App</a>
   </div>
+</nav>
 
-  <div class="col">
-    <!--Nuestras páginas-->
-    <router-outlet></router-outlet>
+<main class="container pt-5 mt-5">
+  <header class="text-center">
+    <h1>Buscador de Países</h1>
+    <p class="fs-5">Por favor, introduzca las palabras clave en el buscador para encontrar la información que necesita.</p>
+  </header>
+
+  <div class="row mt-5">
+    <div class="col-3">
+      <!--Sidebar-->
+      <shared-sidebar></shared-sidebar>
+    </div>
+
+    <div class="col">
+      <!--Nuestras páginas-->
+      <router-outlet></router-outlet>
+    </div>
   </div>
+</main>
 
-</div>
+
+
